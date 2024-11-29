@@ -88,9 +88,10 @@ const products = [
 products.forEach(({ name, id, price, category }) => {
   dessertCards.innerHTML += `
 <div class="dessert-card">
-<h2>${name}</h2>
-<p class="dessert-price">$${price}</p>
-<p class="product-category">Category: ${category}</p>
+    <h2>${name}</h2>
+    <p class="dessert-price">$${price}</p>
+    <p class="product-category">Category: ${category}</p>
+    <button class="btn add-to-cart-btn" id="${id}">Add to cart</button>
 </div>
 
     `;
