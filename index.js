@@ -81,6 +81,8 @@ const products = [
     category: "Cupcake",
   },
 ];
-products.forEach(({ name, id, price, category }) => {});
+products.forEach(({ name, id, price, category }) => {
+  dessertCards.innerHTML += ``;
+});
 
 console.log("Hey!");
