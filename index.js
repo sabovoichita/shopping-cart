@@ -111,8 +111,8 @@ class ShoppingCart {
 
     const totalCountPerProduct = {};
     this.items.forEach((dessert) => {
-      totalCountPerProduct[dessert.id] = 0;
-      totalCountPerProduct[dessert.id] = totalCountPerProduct[dessert.id] + 1;
+      totalCountPerProduct[dessert.id] =
+        (totalCountPerProduct[dessert.id] || 0) + 1;
     });
   }
 }
