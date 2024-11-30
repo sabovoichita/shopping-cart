@@ -137,3 +137,5 @@ const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
     cart.addItem(Number(event.target.id), products);
   });
 });
+
+cartBtn.addEventListener("click", () => {});
