@@ -128,13 +128,18 @@ class ShoppingCart {
             <p>${price}</p>
         </div>`);
   }
-  getCounts = () => this.items.length;
+
+  getCounts() {
+    this.items.length;
+  }
+
+  clearCart() {}
 
   calculateTaxes(amount) {
     return parseFloat(((this.taxRate / 100) * amount).toFixed(2));
   }
 
-  calculateTotal = () => {
+  calculateTotal() {
     const subTotal = this.items.reduce((total, item) => total + item.price, 0);
     const tax = this.calculateTaxes(subTotal);
     this.total = subTotal + tax;
@@ -142,7 +147,7 @@ class ShoppingCart {
     cartTaxes.textContent = `$${tax.toFixed(2)}`;
     cartTotal.textContent = `$${this.total.toFixed(2)}`;
     return this.total;
-  };
+  }
 }
 
 const cart = new ShoppingCart();
