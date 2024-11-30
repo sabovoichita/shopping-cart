@@ -131,7 +131,7 @@ class ShoppingCart {
   getCounts = () => this.items.length;
 
   calculateTaxes(amount) {
-    return ((this.taxRate / 100) * amount).toFixed(2);
+    return parseFloat(((this.taxRate / 100) * amount).toFixed(2));
   }
 
   calculateTotal = () => {
