@@ -130,6 +130,8 @@ class ShoppingCart {
   }
   getCounts = () => this.items.length;
 
+  calculateTaxes(amount) {}
+
   calculateTotal = () => {
     const subTotal = this.items.reduce((total, item) => total + item.price, 0);
   };
