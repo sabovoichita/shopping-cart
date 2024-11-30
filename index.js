@@ -87,13 +87,15 @@ const products = [
 
 products.forEach(({ name, id, price, category }) => {
   dessertCards.innerHTML += `
-<div class="dessert-card">
-    <h2>${name}</h2>
-    <p class="dessert-price">$${price}</p>
-    <p class="product-category">Category: ${category}</p>
-    <button class="btn add-to-cart-btn" id="${id}">Add to cart</button>
-</div>
-
+      <div class="dessert-card">
+        <h2>${name}</h2>
+        <p class="dessert-price">$${price}</p>
+        <p class="product-category">Category: ${category}</p>
+        <button 
+          id="${id}" 
+          class="btn add-to-cart-btn">Add to cart
+        </button>
+      </div>
     `;
 });
 
@@ -116,21 +118,24 @@ class ShoppingCart {
     });
 
     const currentProductCount = totalCountPerProduct[product.id];
-
     const currentProductCountSpan = document.getElementById(
-      `product-count-for-id${product.id}`
+      `product-count-for-id${id}`
     );
+
     currentProductCount > 1
       ? (currentProductCountSpan.textContent = `${currentProductCount}x`)
       : (productsContainer.innerHTML += `
-        <div class="product" id="dessert${id}">
-            <p><span class="product-count" id="product-count-for-id${id}">${name}</span></p>
-            <p>${price}</p>
-        </div>`);
+      <div id="dessert${id}" class="product">
+        <p>
+          <span class="product-count" id="product-count-for-id${id}"></span>${name}
+        </p>
+        <p>${price}</p>
+      </div>
+      `);
   }
 
   getCounts() {
-    this.items.length;
+    return this.items.length;
   }
 
   clearCart() {
@@ -138,6 +143,7 @@ class ShoppingCart {
       alert("Your shopping cart is already empty");
       return;
     }
+
     const isCartCleared = confirm(
       "Are you sure you want to clear all items from your shopping cart?"
     );
@@ -170,6 +176,7 @@ class ShoppingCart {
 
 const cart = new ShoppingCart();
 const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
+
 [...addToCartBtns].forEach((btn) => {
   btn.addEventListener("click", (event) => {
     cart.addItem(Number(event.target.id), products);
