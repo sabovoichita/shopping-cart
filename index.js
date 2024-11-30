@@ -116,5 +116,9 @@ class ShoppingCart {
     });
 
     const currentProductCount = totalCountPerProduct[product.id];
+
+    const currentProductCountSpan = document.getElementById(
+      `product-count-for-id${product.id}`
+    );
   }
 }
