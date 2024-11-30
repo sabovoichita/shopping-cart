@@ -7,3 +7,5 @@ In this shopping cart project, you'll learn how to define classes and use them. 
 This project will cover concepts like the ternary operator, the spread operator, the this keyword, and more.
 
 # [link](https://sabovoichita.github.io/shopping-cart/)
+
+![preview](preview.png)
