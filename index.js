@@ -129,6 +129,10 @@ class ShoppingCart {
         </div>`);
   }
   getCounts = () => this.items.length;
+
+  calculateTotal = () => {
+    const subTotal = this.items.reduce((total, item) => total + item.price, 0);
+  };
 }
 
 const cart = new ShoppingCart();
